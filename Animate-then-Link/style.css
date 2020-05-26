@@ -1,25 +1,73 @@
-.non-animated-div {
-    background: #8d0303;
-    color: black;
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
-}
-
-.animated-div {
-    background: #8d0303;
-    color: black;
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
-    animation: test 3s ease-in-out 0s 1 forwards;
-}
-
-@keyframes test {
-    to {
-        background-color: #1b1458;
-        color: white;
-        width: 100%;
-        height: 200px;
-    }
-}
+*{
+    text-align: center;
+    background: #f8f8f8;
+    color: #150000;
+  }
+  
+  a:last-child {
+    padding: 0.25em;
+    font-weight: 500;
+    border: solid 1px #8d0303;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  
+  button {
+    background: transparent;
+    width: 300px;
+    height: auto;
+    margin: 1em;
+    padding: 1em;
+    border: solid 3px #8d0303;
+    border-radius: 10px;
+    color: #8d0303;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #150000;
+    color: white;
+    border: #8d0303 solid 3px;
+  }
+  
+  /*Animated Part Below:*/
+  
+  .non-animated-div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: #150000 solid 3px;
+      border-radius: 10px;
+      background: #8d0303;
+      color: white;
+      width: 300px;
+      height: 200px;
+      margin: 0 auto;
+  }
+  
+  .animated-div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      border: #150000 solid 3px;
+      background: #8d0303;
+      color: black;
+      width: 500px;
+      height: 200px;
+      margin: 0 auto;
+      animation: test 3s ease-in-out 0s 1 forwards;
+  }
+  
+  @keyframes test {
+      to {
+          background-color: transparent;
+          border: none;
+          color: transparent;
+          width: 100%;
+          height: 200px;
+      }
+  }
+  
