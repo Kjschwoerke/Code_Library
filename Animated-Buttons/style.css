@@ -21,11 +21,8 @@ body {
 
 main {
     display: block;
-    width: 50vw;
     margin: 5em auto 2em;
     padding: 2em;
-    box-shadow: 0px 3px 3px var(--shadow);
-    border-radius: 10px;
 }
 
 .button-container {
@@ -33,8 +30,7 @@ main {
 }
 
 .button-class {
-    padding: 1em;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 0.5em;
     font-size: 1.5em;
     letter-spacing: 3px;
     color: var(--white);
@@ -48,8 +44,42 @@ main {
 /* CSS Button Animations */
 /* ------------------------ */
 
+/* ------------------------ */
 /* Stretch Button CSS */
+/* ------------------------ */
+.bounce {
+    width: 250px;
+}
 
+.bounce:hover {
+    animation: bounce 0.40s ease-in-out 0s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1, 1);
+        translate: 0 0px; 
+    }
+    40% {
+        transform: scale(0.65, 1.35);
+    }
+
+    50% {
+        transform: scale(0.65, 1.35);   
+    }
+
+    60% {
+        transform: scale(0.65, 1.35)
+    }
+    100% {
+        transform: scale(0.65, 1.35);
+        translate: 0 -75px;
+    }
+}
+
+/* ------------------------ */
+/* Stretch Button CSS */
+/* ------------------------ */
 .stretch:hover {
     animation: stretch 0.85s ease-in-out 0s infinite alternate;
 }
@@ -99,18 +129,66 @@ main {
     }
 }
 
+/* ------------------------ */
 /* Button Press Animation CSS */
+/* ------------------------ */
 .press {
     height: 75px;
     width: 400px;
     box-shadow: inset 3px 3px 3px #ffffff94, 
-    inset -3px -3px 3px var(--shadow),
-    3px 3px 3px var(--shadow);
+    inset -3px -3px 3px var(--shadow);
 }
 
 .press:active {
+    color: #ffffffd8;
     box-shadow: inset 3px 3px 3px var(--shadow), 
     inset -3px -3px 3px #ffffff56;
-    color: #d1d1d1;
     font-size: 1.45em;
 }
+
+/* ------------------------ */
+/* Button Fill Animation CSS */
+/* ------------------------ */
+.fill {
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid var(--blue);
+    background: transparent;
+    position: relative;
+    padding: 0;
+    width: 300px;
+    font-size: 1.5em;
+    color: #f8f8f8;
+    /*For IE*/
+  }
+  .fill > span {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(90deg, #f8f8f8 50%, var(--blue) 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .fill:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, var(--blue) 50%, transparent 50%);
+    z-index: -1;
+  }
+  
+  .fill > span, .fill:after {
+    background-size: 300%;
+    background-position: 100%;
+    transition: 1s, font-size 0.2s;
+  }
+  
+  .fill:hover > span, .fill:hover:after {
+    background-position: 0;
+    font-size: 1em;
+    /*For IE*/
+  }
+  
+
