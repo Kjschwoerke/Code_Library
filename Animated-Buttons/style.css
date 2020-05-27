@@ -1,0 +1,116 @@
+:root {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+
+/* ------------------------ */
+/* CSS Color Variables */
+/* ------------------------ */
+    --white: #f8f8f8;
+    --black: #000012;
+    --blue: #464670;
+    --shadow: #13162069;
+}
+
+body {
+    margin: 2em;
+    text-align: center;
+    background: var(--white)
+}
+
+main {
+    display: block;
+    width: 50vw;
+    margin: 5em auto 2em;
+    padding: 2em;
+    box-shadow: 0px 3px 3px var(--shadow);
+    border-radius: 10px;
+}
+
+.button-container {
+    margin: 2em;
+}
+
+.button-class {
+    padding: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 3px;
+    color: var(--white);
+    background: var(--blue);
+    border: solid 2px var(--black);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* ------------------------ */
+/* CSS Button Animations */
+/* ------------------------ */
+
+/* Stretch Button CSS */
+
+.stretch:hover {
+    animation: stretch 0.85s ease-in-out 0s infinite alternate;
+}
+
+@keyframes stretch {
+    0% {
+        transform: scale(1, 1) 
+    }
+    10% {
+        transform: scale(1, 1) 
+    }
+    25%{
+        transform: scale(0.75, 1.25)
+    }
+    25%{
+        transform: scale(0.75, 1.25)
+    }
+    45%{
+        transform: scale(1.25, 0.75)
+    }
+    50% {
+        transform: scale(1.25, 0.75)
+    }
+    75% {
+        transform: scale(1.5, 0.5) rotate(-3deg);
+        translate: 1px 2px; 
+    }
+    80% {
+        transform: scale(1.5, 0.5) rotate(3deg);
+        translate: -2px 3px; 
+    }
+    85% {
+        transform: scale(1.5, 0.5)rotate(-3deg);
+        translate: 3px -2px; 
+    }
+    90% {
+        transform: scale(1.5, 0.5);
+        translate: -1px -4px; 
+    }
+    95% {
+        transform: scale(1.5, 0.5);
+        translate: 4px 2px; 
+    }
+    100% {
+        transform: scale(1.5, 0.5);
+        translate: -1px -2px;  
+    }
+}
+
+/* Button Press Animation CSS */
+.press {
+    height: 75px;
+    width: 400px;
+    box-shadow: inset 3px 3px 3px #ffffff94, 
+    inset -3px -3px 3px var(--shadow),
+    3px 3px 3px var(--shadow);
+}
+
+.press:active {
+    box-shadow: inset 3px 3px 3px var(--shadow), 
+    inset -3px -3px 3px #ffffff56;
+    color: #d1d1d1;
+    font-size: 1.45em;
+}
